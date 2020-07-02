@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+    <h1>Sign Up here</h1>
+    <p th:if="${status}">
+        <span style="color:green" th:text="${message}"></span>
+    </p>
+    <p th:unless="${status}">
+        <span style="color:red" th:text="${message}"></span>
+    </p>
+    <form th:action="@{/register}" method="POST">
+        <label>Username</label>
+        <input type="text" name="username" required/>
+        <br/>
+        <label>Password</label>
+        <input type="password" name="password" required/>
+        <br/>
+        <label>Name</label>
+        <input type="text" name="name" required/>
+        <br/>
+        <label>Contact</label>
+        <input type="text" name="contact" required/>
+        <br/>
+
+        <input type="submit" value="Submit"/>&nbsp;&nbsp;
+        <input type="reset" value="Reset"/>
+    </form>
+</body>
+</html>
